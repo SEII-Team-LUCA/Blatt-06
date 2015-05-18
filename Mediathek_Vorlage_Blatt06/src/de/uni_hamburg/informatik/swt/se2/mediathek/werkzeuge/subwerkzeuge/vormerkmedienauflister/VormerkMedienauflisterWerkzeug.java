@@ -8,7 +8,7 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
 import de.uni_hamburg.informatik.swt.se2.mediathek.materialien.Kunde;
-import de.uni_hamburg.informatik.swt.se2.mediathek.materialien.Vormerkkarte;
+//import de.uni_hamburg.informatik.swt.se2.mediathek.materialien.Vormerkkarte;
 import de.uni_hamburg.informatik.swt.se2.mediathek.materialien.medien.Medium;
 import de.uni_hamburg.informatik.swt.se2.mediathek.services.ServiceObserver;
 import de.uni_hamburg.informatik.swt.se2.mediathek.services.medienbestand.MedienbestandService;
@@ -31,7 +31,7 @@ public class VormerkMedienauflisterWerkzeug extends ObservableSubWerkzeug
     private VormerkMedienauflisterUI _ui;
     private MedienbestandService _medienbestand;
     private final VerleihService _verleihService;
-    private List<Vormerkkarte> _vormerkkarten;
+    //private List<Vormerkkarte> _vormerkkarten;
 
     /**
      * Initialisiert ein neues VormerkMedienauflisterWerkzeug. Es wird die
@@ -82,7 +82,7 @@ public class VormerkMedienauflisterWerkzeug extends ObservableSubWerkzeug
     {
         List<Medium> medienListe = _medienbestand.getMedien();
         List<VormerkMedienFormatierer> medienFormatierer = new ArrayList<VormerkMedienFormatierer>();
-        _vormerkkarten = new ArrayList<Vormerkkarte>();
+        //_vormerkkarten = new ArrayList<Vormerkkarte>();
         for (Medium medium : medienListe)
         {
             // TODO für Aufgabenblatt 6 (nicht löschen): Die
@@ -102,7 +102,7 @@ public class VormerkMedienauflisterWerkzeug extends ObservableSubWerkzeug
             //temporaereVormerkkarte.wurdeAusgeliehen(entleiher);
             //_vormerkkarten.add(temporaereVormerkkarte);
             /**new VormerkkartenVerwalter(medium);*/
-            _vormerkkarten.add(new Vormerkkarte(medium));
+            //_vormerkkarten.add(new Vormerkkarte(medium));
 
             medienFormatierer.add(new VormerkMedienFormatierer(medium,
                     entleiher, vormerker1, vormerker2, vormerker3));
