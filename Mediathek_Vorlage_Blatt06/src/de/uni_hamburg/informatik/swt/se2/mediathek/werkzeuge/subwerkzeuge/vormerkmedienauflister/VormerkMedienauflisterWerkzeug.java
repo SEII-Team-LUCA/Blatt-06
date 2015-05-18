@@ -31,7 +31,6 @@ public class VormerkMedienauflisterWerkzeug extends ObservableSubWerkzeug
     private VormerkMedienauflisterUI _ui;
     private MedienbestandService _medienbestand;
     private final VerleihService _verleihService;
-    //private List<Vormerkkarte> _vormerkkarten;
 
     /**
      * Initialisiert ein neues VormerkMedienauflisterWerkzeug. Es wird die
@@ -82,7 +81,6 @@ public class VormerkMedienauflisterWerkzeug extends ObservableSubWerkzeug
     {
         List<Medium> medienListe = _medienbestand.getMedien();
         List<VormerkMedienFormatierer> medienFormatierer = new ArrayList<VormerkMedienFormatierer>();
-        //_vormerkkarten = new ArrayList<Vormerkkarte>();
         for (Medium medium : medienListe)
         {
             // TODO für Aufgabenblatt 6 (nicht löschen): Die
@@ -94,15 +92,6 @@ public class VormerkMedienauflisterWerkzeug extends ObservableSubWerkzeug
             Kunde vormerker1 = null;
             Kunde vormerker2 = null;
             Kunde vormerker3 = null;
-
-            // FERTIG Eine Liste _vormerkkarten ergänzt und sie mit einer
-            // Vormerkkarte für jedes Medium vollgestopft.
-            // (Erstmal sind alle Felder, bis auf das Medium, null.)
-            /**Vormerkkarte temporaereVormerkkarte = new Vormerkkarte(medium);
-            //temporaereVormerkkarte.wurdeAusgeliehen(entleiher);
-            //_vormerkkarten.add(temporaereVormerkkarte);
-            /**new VormerkkartenVerwalter(medium);*/
-            //_vormerkkarten.add(new Vormerkkarte(medium));
 
             medienFormatierer.add(new VormerkMedienFormatierer(medium,
                     entleiher, vormerker1, vormerker2, vormerker3));

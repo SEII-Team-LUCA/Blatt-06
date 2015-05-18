@@ -8,13 +8,11 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
 import de.uni_hamburg.informatik.swt.se2.mediathek.materialien.Kunde;
-import de.uni_hamburg.informatik.swt.se2.mediathek.materialien.Vormerkkarte;
 import de.uni_hamburg.informatik.swt.se2.mediathek.materialien.medien.Medium;
 import de.uni_hamburg.informatik.swt.se2.mediathek.services.ServiceObserver;
 import de.uni_hamburg.informatik.swt.se2.mediathek.services.medienbestand.MedienbestandService;
 import de.uni_hamburg.informatik.swt.se2.mediathek.services.verleih.VerleihService;
 import de.uni_hamburg.informatik.swt.se2.mediathek.werkzeuge.ObservableSubWerkzeug;
-import de.uni_hamburg.informatik.swt.se2.mediathek.werkzeuge.subwerkzeuge.vormerkmedienauflister.VormerkMedienauflisterWerkzeug;;
 
 /**
  * Ein AusleiheMedienauflisterWerkzeug ist ein Werkzeug zum auflisten von Medien
@@ -89,15 +87,6 @@ public class AusleiheMedienauflisterWerkzeug extends ObservableSubWerkzeug
             // darf, gemäß Anforderung d).
 
             Kunde ersterVormerker = null;
-
-            // IM BAU
-            /**for (Medium medium2 : medienListe)
-            {
-                if(VormerkMedienauflisterWerkzeug._vormerkkarten.get(0) == new Kunde(new Kundennummer(1), "a", "b"))
-                {
-                    
-                }
-            }*/
 
             medienFormatierer.add(new AusleiheMedienFormatierer(medium,
                     istVerliehen, ersterVormerker));
