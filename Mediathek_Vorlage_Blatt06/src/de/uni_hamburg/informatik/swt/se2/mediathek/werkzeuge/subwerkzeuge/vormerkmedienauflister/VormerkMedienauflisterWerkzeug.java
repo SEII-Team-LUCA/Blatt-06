@@ -14,6 +14,7 @@ import de.uni_hamburg.informatik.swt.se2.mediathek.services.ServiceObserver;
 import de.uni_hamburg.informatik.swt.se2.mediathek.services.medienbestand.MedienbestandService;
 import de.uni_hamburg.informatik.swt.se2.mediathek.services.verleih.VerleihService;
 import de.uni_hamburg.informatik.swt.se2.mediathek.werkzeuge.ObservableSubWerkzeug;
+/**import de.uni_hamburg.informatik.swt.se2.mediathek.werkzeuge.vormerken.VormerkkartenVerwalter;*/
 
 /**
  * Ein VormerkMedienauflisterWerkzeug ist ein Werkzeug zum Auflisten von Medien
@@ -30,7 +31,7 @@ public class VormerkMedienauflisterWerkzeug extends ObservableSubWerkzeug
     private VormerkMedienauflisterUI _ui;
     private MedienbestandService _medienbestand;
     private final VerleihService _verleihService;
-    public List<Vormerkkarte> _vormerkkarten;
+    private List<Vormerkkarte> _vormerkkarten;
 
     /**
      * Initialisiert ein neues VormerkMedienauflisterWerkzeug. Es wird die
@@ -97,7 +98,11 @@ public class VormerkMedienauflisterWerkzeug extends ObservableSubWerkzeug
             // FERTIG Eine Liste _vormerkkarten ergänzt und sie mit einer
             // Vormerkkarte für jedes Medium vollgestopft.
             // (Erstmal sind alle Felder, bis auf das Medium, null.)
-            _vormerkkarten.add(new Vormerkkarte(entleiher, medium));
+            /**Vormerkkarte temporaereVormerkkarte = new Vormerkkarte(medium);
+            //temporaereVormerkkarte.wurdeAusgeliehen(entleiher);
+            //_vormerkkarten.add(temporaereVormerkkarte);
+            /**new VormerkkartenVerwalter(medium);*/
+            _vormerkkarten.add(new Vormerkkarte(medium));
 
             medienFormatierer.add(new VormerkMedienFormatierer(medium,
                     entleiher, vormerker1, vormerker2, vormerker3));
