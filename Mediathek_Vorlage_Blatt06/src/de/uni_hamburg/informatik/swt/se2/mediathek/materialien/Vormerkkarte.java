@@ -14,10 +14,14 @@ public class Vormerkkarte {
 	private List<Kunde> _vormerker;
 	private final Medium _medium;
 
-	public Vormerkkarte(Kunde ausleiher, Medium medium) {
-		_ausleiher = ausleiher;
+	public Vormerkkarte(Medium medium) {
 		_vormerker = new LinkedList<Kunde>();
 		_medium = medium;
+	}
+	
+	public void wurdeAusgeliehen(Kunde ausleiher)
+	{
+        _ausleiher = ausleiher;
 	}
 
 	public void fuegeVormerkerHinzu(Kunde vormerker) {

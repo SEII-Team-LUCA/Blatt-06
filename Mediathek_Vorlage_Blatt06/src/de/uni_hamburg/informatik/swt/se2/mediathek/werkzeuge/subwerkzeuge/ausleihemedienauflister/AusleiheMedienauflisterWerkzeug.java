@@ -85,14 +85,14 @@ public class AusleiheMedienauflisterWerkzeug extends ObservableSubWerkzeug
             // Ist dies korrekt implementiert, erscheint in der Ausleiheansicht
             // der Name des Vormerkers, an den ein Medium ausgeliehen werden
             // darf, gemäß Anforderung d).
-            
-            
+
             Kunde ersterVormerker = null;
 
             medienFormatierer.add(new AusleiheMedienFormatierer(medium,
                     istVerliehen, ersterVormerker));
         }
-        _ui.getMedienAuflisterTableModel().setMedien(medienFormatierer);
+        _ui.getMedienAuflisterTableModel()
+            .setMedien(medienFormatierer);
     }
 
     /**
@@ -101,15 +101,16 @@ public class AusleiheMedienauflisterWerkzeug extends ObservableSubWerkzeug
      */
     private void registriereMedienAnzeigenAktion()
     {
-        _ui.getMedienAuflisterTable().getSelectionModel()
-                .addListSelectionListener(new ListSelectionListener()
+        _ui.getMedienAuflisterTable()
+            .getSelectionModel()
+            .addListSelectionListener(new ListSelectionListener()
+            {
+                @Override
+                public void valueChanged(ListSelectionEvent e)
                 {
-                    @Override
-                    public void valueChanged(ListSelectionEvent e)
-                    {
-                        informiereUeberAenderung();
-                    }
-                });
+                    informiereUeberAenderung();
+                }
+            });
     }
 
     /**
@@ -141,15 +142,14 @@ public class AusleiheMedienauflisterWerkzeug extends ObservableSubWerkzeug
     public List<Medium> getSelectedMedien()
     {
         List<Medium> result = new ArrayList<Medium>();
-        int[] selectedRows = _ui.getMedienAuflisterTable().getSelectedRows();
-        AusleiheMedienTableModel ausleiheMedienTableModel = _ui
-                .getMedienAuflisterTableModel();
+        int[] selectedRows = _ui.getMedienAuflisterTable()
+            .getSelectedRows();
+        AusleiheMedienTableModel ausleiheMedienTableModel = _ui.getMedienAuflisterTableModel();
         for (int zeile : selectedRows)
         {
             if (ausleiheMedienTableModel.zeileExistiert(zeile))
             {
-                Medium medium = ausleiheMedienTableModel
-                        .getMediumFuerZeile(zeile);
+                Medium medium = ausleiheMedienTableModel.getMediumFuerZeile(zeile);
                 result.add(medium);
             }
         }
