@@ -26,6 +26,13 @@ public class Vormerkkarte {
 		}
 	}
 
+	/**
+	 * 
+	 * @param ausleiher
+	 * @return ob Ausleihen moeglich ist
+	 * 
+	 * @require ausleiher != null
+	 */
 	public boolean pruefeObAusleihenMoeglich(Kunde ausleiher) {
 		return (_ausleiher == null && (_vormerker.get(0) == ausleiher || _vormerker.get(0) == null));
 	}
