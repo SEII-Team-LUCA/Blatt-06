@@ -115,6 +115,10 @@ public class VerleihServiceImpl extends AbstractObservableService implements
 
         for (Medium medium : medien)
         {
+            
+            // BEARBEITET Die Vormerkkarte wird geupdated beim Zurücknehmen.
+            medium.getVormerkkarte().wurdeZurueckgegeben();
+            
             Verleihkarte verleihkarte = _verleihkarten.get(medium);
             _verleihkarten.remove(medium);
             _protokollierer.protokolliere(
