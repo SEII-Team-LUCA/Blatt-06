@@ -35,7 +35,7 @@ public class Vormerkkarte
         assert ausleiher != null : "Vorbedingung verletzt: null";
         //if (pruefeObAusleihenMoeglich(ausleiher))
         //{
-            _ausleiher = ausleiher;
+        _ausleiher = ausleiher;
         //}
     }
 
@@ -51,7 +51,7 @@ public class Vormerkkarte
         assert vormerker != null : "Vorbedingung verletzt: null";
         //if (pruefeObVormerkenMoeglich(vormerker))
         //{
-            _vormerker.add(vormerker);
+        _vormerker.add(vormerker);
         //}
     }
 
@@ -114,7 +114,7 @@ public class Vormerkkarte
     {
         _ausleiher = null;
     }
-    
+
     /**
      * gibt den aktuellen Ausleiher zurück.
      * 
@@ -124,7 +124,7 @@ public class Vormerkkarte
     {
         return _ausleiher;
     }
-    
+
     /**
      * gibt den Vormerker an Stelle stelle zurück
      * 
@@ -133,7 +133,13 @@ public class Vormerkkarte
      */
     public Kunde gibVormerker(int stelle)
     {
-        return _vormerker.get(stelle);
+        if (_vormerker.size() > stelle)
+        {
+            return _vormerker.get(stelle);
+        }
+
+        return null;
+
     }
 
     //   public Medium getMedium()
