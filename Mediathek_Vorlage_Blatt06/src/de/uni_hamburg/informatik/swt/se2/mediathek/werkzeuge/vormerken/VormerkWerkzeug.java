@@ -212,18 +212,20 @@ public class VormerkWerkzeug
         // TODO für Aufgabenblatt 6 (nicht löschen): Prüfung muss noch eingebaut
         // werden. Ist dies korrekt imlpementiert, wird der Vormerk-Button gemäß
         // der Anforderungen a), b), c) und e) aktiviert.
-        boolean vormerkenMoeglich = false;
+        
+        // BEARBEITET es wird nun geprüft ob jedes Medium auch vorgemerkt werden kann
+        boolean vormerkenMoeglichVerleihkarte = true;
         
         for (Medium medium : medien)
         {
-            vormerkenMoeglich = medium.getVormerkkarte().pruefeObVormerkenMoeglich(kunde);
-            if(vormerkenMoeglich == false)
-            {
-                break;
-            }
+            vormerkenMoeglichVerleihkarte = medium.getVormerkkarte().pruefeObVormerkenMoeglich(kunde) && vormerkenMoeglichVerleihkarte;
+            //if(vormerkenMoeglich == false)
+            //{
+            //    break;
+            //}
         }
 
-        //boolean vormerkenMoeglich = (kunde != null) && !medien.isEmpty();
+        boolean vormerkenMoeglich = (kunde != null) && !medien.isEmpty() && vormerkenMoeglichVerleihkarte;
 
         return vormerkenMoeglich;
     }

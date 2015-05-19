@@ -68,7 +68,22 @@ public class Vormerkkarte
     public boolean pruefeObAusleihenMoeglich(Kunde ausleiher)
     {
         assert ausleiher != null : "Vorbedingung verletzt: null";
-        return (_ausleiher == null && (_vormerker.get(0) == ausleiher || _vormerker.get(0) == null));
+        return (_ausleiher == null && (holeNaechstenAusleiher() == ausleiher || holeNaechstenAusleiher() == null));
+    }
+
+    /**
+     * Prüft ob überhaupt ein Vormerker existiert.
+     * 
+     * @return der Vormerker (darf auch null sein)
+     */
+    public Kunde holeNaechstenAusleiher()
+    {
+        if (_vormerker.size() > 0)
+        {
+            return _vormerker.get(0);
+        }
+
+        return null;
     }
 
     /**
@@ -86,7 +101,6 @@ public class Vormerkkarte
     public boolean pruefeObVormerkenMoeglich(Kunde vormerker)
     {
         assert vormerker != null : "Vorbedingung verletzt: null";
-        //ToDo Hier müssen noch die ganzen Vormerkbedingungen verarbeitet werden
         return (!_vormerker.contains(vormerker) && _vormerker.size() < 3 && vormerker != _ausleiher);
     }
 
