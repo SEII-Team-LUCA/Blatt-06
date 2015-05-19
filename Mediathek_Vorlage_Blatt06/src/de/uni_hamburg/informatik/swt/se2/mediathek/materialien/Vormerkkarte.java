@@ -83,7 +83,7 @@ public class Vormerkkarte
      * @require vormerker != null
      */
 
-    private boolean pruefeObVormerkenMoeglich(Kunde vormerker)
+    public boolean pruefeObVormerkenMoeglich(Kunde vormerker)
     {
         assert vormerker != null : "Vorbedingung verletzt: null";
         //ToDo Hier müssen noch die ganzen Vormerkbedingungen verarbeitet werden
