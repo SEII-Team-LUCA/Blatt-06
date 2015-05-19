@@ -36,6 +36,7 @@ public class Vormerkkarte
         //if (pruefeObAusleihenMoeglich(ausleiher))
         //{
         _ausleiher = ausleiher;
+        entferneVormerker(ausleiher);
         //}
     }
 
