@@ -216,10 +216,18 @@ public class AusleihWerkzeug
         // TODO für Aufgabenblatt 6 (nicht löschen): So ändern, dass vorgemerkte
         // Medien nur vom ersten Vormerker ausgeliehen werden können, gemäß
         // Anforderung d).
+        // BEARBEITET Es wird nun auch geprüft, ob die Bedingungen durch das Vormerken eingehalten wurden,
+        // damit ein Medium ausgeliehen werden kann.
+        boolean ausleiheMoeglichVormerkkarte = true;
+        for (Medium medium: medien)
+        {
+            ausleiheMoeglichVormerkkarte = medium.getVormerkkarte().pruefeObAusleihenMoeglich(kunde) && ausleiheMoeglichVormerkkarte;
+        }
+        
         boolean ausleiheMoeglich = (kunde != null) && !medien.isEmpty()
                 && _verleihService.sindAlleNichtVerliehen(medien);
 
-        return ausleiheMoeglich;
+        return ausleiheMoeglich && ausleiheMoeglichVormerkkarte;
     }
 
     /**

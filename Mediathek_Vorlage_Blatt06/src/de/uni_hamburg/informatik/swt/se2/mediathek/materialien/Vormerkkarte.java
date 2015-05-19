@@ -33,10 +33,10 @@ public class Vormerkkarte
     public void leiheAus(Kunde ausleiher)
     {
         assert ausleiher != null : "Vorbedingung verletzt: null";
-        if (pruefeObAusleihenMoeglich(ausleiher))
-        {
+        //if (pruefeObAusleihenMoeglich(ausleiher))
+        //{
             _ausleiher = ausleiher;
-        }
+        //}
     }
 
     /**
@@ -49,10 +49,10 @@ public class Vormerkkarte
     public void fuegeVormerkerHinzu(Kunde vormerker)
     {
         assert vormerker != null : "Vorbedingung verletzt: null";
-        if (pruefeObVormerkenMoeglich(vormerker))
-        {
+        //if (pruefeObVormerkenMoeglich(vormerker))
+        //{
             _vormerker.add(vormerker);
-        }
+        //}
     }
 
     /**
@@ -65,7 +65,7 @@ public class Vormerkkarte
      * 
      * @require ausleiher != null
      */
-    private boolean pruefeObAusleihenMoeglich(Kunde ausleiher)
+    public boolean pruefeObAusleihenMoeglich(Kunde ausleiher)
     {
         assert ausleiher != null : "Vorbedingung verletzt: null";
         return (_ausleiher == null && (_vormerker.get(0) == ausleiher || _vormerker.get(0) == null));

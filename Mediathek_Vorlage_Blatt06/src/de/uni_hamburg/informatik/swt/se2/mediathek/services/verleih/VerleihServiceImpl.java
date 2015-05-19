@@ -195,7 +195,7 @@ public class VerleihServiceImpl extends AbstractObservableService implements
             Verleihkarte verleihkarte = new Verleihkarte(kunde, medium,
                     ausleihDatum);
             
-            // BEARBEITET Die Vormerkkarte wird geupdated
+            // BEARBEITET Die Vormerkkarte wird geupdated beim Ausleihen.
             
             medium.getVormerkkarte().leiheAus(kunde);
 
