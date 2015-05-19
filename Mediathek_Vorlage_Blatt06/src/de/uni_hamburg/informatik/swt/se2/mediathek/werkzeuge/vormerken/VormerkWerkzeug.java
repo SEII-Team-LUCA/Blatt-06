@@ -254,7 +254,8 @@ public class VormerkWerkzeug
             }
         }
 
-        // TODO protected void informiereUeberAenderung() verwenden
+        // TODO protected void informiereUeberAenderung() irgendwo verwenden
+        
 
     }
 
