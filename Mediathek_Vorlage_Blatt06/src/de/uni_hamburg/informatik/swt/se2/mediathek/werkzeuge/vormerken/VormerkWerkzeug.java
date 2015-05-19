@@ -244,6 +244,7 @@ public class VormerkWerkzeug
         List<Medium> selectedMedien = _medienAuflisterWerkzeug.getSelectedMedien();
         Kunde selectedKunde = _kundenAuflisterWerkzeug.getSelectedKunde();
         // TODO für Aufgabenblatt 6 (nicht löschen): Vormerken einbauen
+        
         // BEARBEITET Kunden werden nun hinzugefügt
         if (istVormerkenMoeglich())
         {
@@ -252,6 +253,8 @@ public class VormerkWerkzeug
                 medium.fuegeVormerkerHinzu(selectedKunde);
             }
         }
+        
+        // TODO 
 
     }
 
