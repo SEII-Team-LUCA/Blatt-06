@@ -114,6 +114,27 @@ public class Vormerkkarte
     {
         _ausleiher = null;
     }
+    
+    /**
+     * gibt den aktuellen Ausleiher zurück.
+     * 
+     * @return der aktuelle Ausleiher
+     */
+    public Kunde gibAusleiher()
+    {
+        return _ausleiher;
+    }
+    
+    /**
+     * gibt den Vormerker an Stelle stelle zurück
+     * 
+     * @param stelle Stelle an der der Vormerker steht
+     * @return der Vormerker an Stelle stelle
+     */
+    public Kunde gibVormerker(int stelle)
+    {
+        return _vormerker.get(stelle);
+    }
 
     //   public Medium getMedium()
     //   {
