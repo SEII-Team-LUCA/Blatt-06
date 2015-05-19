@@ -3,7 +3,7 @@ package de.uni_hamburg.informatik.swt.se2.mediathek.materialien;
 import java.util.LinkedList;
 import java.util.List;
 
-import de.uni_hamburg.informatik.swt.se2.mediathek.materialien.medien.Medium;
+//import de.uni_hamburg.informatik.swt.se2.mediathek.materialien.medien.Medium;
 
 /**
  * @author Aurora
@@ -13,12 +13,13 @@ public class Vormerkkarte
 {
     private Kunde _ausleiher;
     private List<Kunde> _vormerker;
-    private final Medium _medium;
+    //private final Medium _medium;
 
-    public Vormerkkarte(Medium medium)
+    public Vormerkkarte(Kunde ausleiher)
     {
+        _ausleiher = ausleiher;
         _vormerker = new LinkedList<Kunde>();
-        _medium = medium;
+       // _medium = medium;
     }
 
     /**
@@ -60,6 +61,19 @@ public class Vormerkkarte
         assert ausleiher != null : "Vorbedingung verletzt: null";
         return (_ausleiher == null && (_vormerker.get(0) == ausleiher || _vormerker.get(0) == null));
     }
+    
+    /**
+     * Neue Methode: Vormerkprüfung
+     * 
+     * @param ausleiher
+     * @return ob Vormerken moeglich ist
+     */
+    
+    public boolean pruefeObVormerkenMoeglich(Kunde ausleiher)
+    {
+        //ToDo Hier müssen noch die ganzen Vormerkbedingungen verarbeitet werden
+        return true;
+    }
 
     /**
      * 
@@ -81,8 +95,8 @@ public class Vormerkkarte
         _ausleiher = null;
     }
 
-    public Medium getMedium()
-    {
-        return _medium;
-    }
+ //   public Medium getMedium()
+ //   {
+  //      return _medium;
+  //  }
 }

@@ -1,6 +1,8 @@
 package de.uni_hamburg.informatik.swt.se2.mediathek.materialien.medien;
 
 import de.uni_hamburg.informatik.swt.se2.mediathek.fachwerte.Geldbetrag;
+import de.uni_hamburg.informatik.swt.se2.mediathek.materialien.Vormerkkarte;
+import de.uni_hamburg.informatik.swt.se2.mediathek.materialien.Kunde;
 
 /**
  * Ein AbstractMedium bietet eine Standardimplementation für ein Medium an.
@@ -28,6 +30,13 @@ abstract class AbstractMedium implements Medium
      * 
      */
     private String _titel;
+    
+    /**
+     * Die Vormerkkarte des Mediums
+     * 
+     */
+    private Vormerkkarte _vormerkkarte;
+    
 
     /**
      * Initialisiert ein neues Exemplar.
@@ -48,6 +57,7 @@ abstract class AbstractMedium implements Medium
         _titel = titel;
         _kommentar = kommentar;
         _tagesmietgebuehr = 300;
+        _vormerkkarte = new Vormerkkarte(null);
     }
 
     @Override
@@ -104,5 +114,20 @@ abstract class AbstractMedium implements Medium
         assert titel != null : "Vorbedingung verletzt: titel != null";
         _titel = titel;
     }
-
+    
+    /**
+     * Fügt einen Vormerker in die Vormerkkarte. Prüft noch nicht, ob es möglich ist.
+     */
+    public void fuegeVormerkerHinzu(Kunde vormerker)
+    {
+        _vormerkkarte.fuegeVormerkerHinzu(vormerker);
+    }
+    
+    /**
+     * Liefert die zum Medium gehörende Vormerkkarte
+     */
+    public Vormerkkarte getVormerkkarte()
+    {
+        return _vormerkkarte;
+    }
 }
