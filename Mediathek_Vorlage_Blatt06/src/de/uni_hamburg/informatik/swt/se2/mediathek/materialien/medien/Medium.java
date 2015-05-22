@@ -1,6 +1,8 @@
 package de.uni_hamburg.informatik.swt.se2.mediathek.materialien.medien;
 
 import de.uni_hamburg.informatik.swt.se2.mediathek.fachwerte.Geldbetrag;
+import de.uni_hamburg.informatik.swt.se2.mediathek.materialien.Vormerkkarte;
+import de.uni_hamburg.informatik.swt.se2.mediathek.materialien.Kunde;
 
 /**
  * Ein Medium definiert Eigenschaften, die alle Medien unserer Mediathek
@@ -83,5 +85,8 @@ public interface Medium
      * @ensure getTitel() == titel
      */
     public void setTitel(String titel);
-
+    
+    public void fuegeVormerkerHinzu(Kunde vormerker);
+    
+    public Vormerkkarte getVormerkkarte();
 }
