@@ -115,6 +115,8 @@ abstract class AbstractMedium implements Medium
         _titel = titel;
     }
     
+    //BEARBEITET Wir können uns nun die Vormerkkarte an einem Medium ausgeben lassen und bearbeiten. Implementiert
+    
     /**
      * Fügt einen Vormerker in die Vormerkkarte. Prüft noch nicht, ob es möglich ist.
      */

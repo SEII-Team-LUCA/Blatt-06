@@ -3,7 +3,7 @@ package de.uni_hamburg.informatik.swt.se2.mediathek.materialien;
 import java.util.LinkedList;
 import java.util.List;
 
-//import de.uni_hamburg.informatik.swt.se2.mediathek.materialien.medien.Medium;
+//BEARBEITET Vormerkkarte zur informationserhaltung während des Vormerkvorgangs.
 
 /**
  * @author Aurora
