@@ -213,7 +213,7 @@ public class VormerkWerkzeug
         // werden. Ist dies korrekt imlpementiert, wird der Vormerk-Button gemäß
         // der Anforderungen a), b), c) und e) aktiviert.
 
-        // BEARBEITET es wird nun geprüft ob jedes Medium auch vorgemerkt werden kann
+        // BEARBEITET 04. es wird nun geprüft ob jedes Medium auch vorgemerkt werden kann
         boolean vormerkenMoeglichVerleihkarte = true;
 
         for (Medium medium : medien)
@@ -245,7 +245,7 @@ public class VormerkWerkzeug
         Kunde selectedKunde = _kundenAuflisterWerkzeug.getSelectedKunde();
         // TODO für Aufgabenblatt 6 (nicht löschen): Vormerken einbauen
 
-        // BEARBEITET Kunden werden nun hinzugefügt
+        // BEARBEITET 06. Kunden werden nun hinzugefügt
         if (istVormerkenMoeglich())
         {
             _verleihService.merkeVor(selectedMedien, selectedKunde);

@@ -86,7 +86,7 @@ public interface Medium
      */
     public void setTitel(String titel);
     
-    //BEARBEITET Wir können uns nun die Vormerkkarte an einem Medium ausgeben lassen und bearbeiten.
+    //BEARBEITET 02. Wir können uns nun die Vormerkkarte an einem Medium ausgeben lassen und bearbeiten.
     
     public void fuegeVormerkerHinzu(Kunde vormerker);
     

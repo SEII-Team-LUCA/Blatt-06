@@ -3,7 +3,7 @@ package de.uni_hamburg.informatik.swt.se2.mediathek.materialien;
 import java.util.LinkedList;
 import java.util.List;
 
-//BEARBEITET Vormerkkarte zur informationserhaltung während des Vormerkvorgangs.
+//BEARBEITET 01. Vormerkkarte zur informationserhaltung während des Vormerkvorgangs.
 
 /**
  * @author Aurora
@@ -156,7 +156,16 @@ public class Vormerkkarte
         return null;
 
     }
-
+    
+    /**
+     * gibt die Anzahl der aktuellen Vormerker zurück.
+     * @return Die Anzahl der Vormerker
+     */
+    public int gibAnzahlVormerker()
+    {
+        return _vormerker.size();
+    }
+    
     //   public Medium getMedium()
     //   {
     //      return _medium;

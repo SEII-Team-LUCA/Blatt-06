@@ -216,7 +216,7 @@ public class AusleihWerkzeug
         // Medien nur vom ersten Vormerker ausgeliehen werden können, gemäß
         // Anforderung d).
 
-        // BEARBEITET Es wird nun auch geprüft, ob die Bedingungen durch das Vormerken eingehalten wurden,
+        // BEARBEITET 08. Es wird nun auch geprüft, ob die Bedingungen durch das Vormerken eingehalten wurden,
         // damit ein Medium ausgeliehen werden kann.
         boolean ausleiheMoeglichVormerkkarte = true;
         for (Medium medium : medien)

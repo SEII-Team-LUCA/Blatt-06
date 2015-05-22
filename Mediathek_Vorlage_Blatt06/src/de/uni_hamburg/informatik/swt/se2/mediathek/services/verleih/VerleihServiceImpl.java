@@ -115,7 +115,7 @@ public class VerleihServiceImpl extends AbstractObservableService implements
         for (Medium medium : medien)
         {
 
-            // BEARBEITET Die Vormerkkarte wird geupdated beim Zurücknehmen.
+            // BEARBEITET 11. Die Vormerkkarte wird geupdated beim Zurücknehmen.
             medium.getVormerkkarte()
                 .wurdeZurueckgegeben();
 
@@ -185,7 +185,7 @@ public class VerleihServiceImpl extends AbstractObservableService implements
         return result;
     }
 
-    //BEARBEITET Methode hinzugefügt
+    //BEARBEITET 07. Methode ausgelagert
 
     @Override
     public void merkeVor(List<Medium> selectedMedien, Kunde selectedKunde)
@@ -212,7 +212,7 @@ public class VerleihServiceImpl extends AbstractObservableService implements
             Verleihkarte verleihkarte = new Verleihkarte(kunde, medium,
                     ausleihDatum);
 
-            // BEARBEITET Die Vormerkkarte wird geupdated beim Ausleihen.
+            // BEARBEITET 10. Die Vormerkkarte wird geupdated beim Ausleihen.
             medium.getVormerkkarte()
                 .leiheAus(kunde);
 
