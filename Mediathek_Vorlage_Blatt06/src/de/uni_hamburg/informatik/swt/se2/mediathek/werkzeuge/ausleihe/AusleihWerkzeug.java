@@ -156,14 +156,15 @@ public class AusleihWerkzeug
      */
     private void registriereAusleihAktion()
     {
-        _ausleiheUI.getAusleihButton().addActionListener(new ActionListener()
-        {
-            @Override
-            public void actionPerformed(ActionEvent e)
+        _ausleiheUI.getAusleihButton()
+            .addActionListener(new ActionListener()
             {
-                leiheAusgewaehlteMedienAus();
-            }
-        });
+                @Override
+                public void actionPerformed(ActionEvent e)
+                {
+                    leiheAusgewaehlteMedienAus();
+                }
+            });
     }
 
     /**
@@ -172,16 +173,15 @@ public class AusleihWerkzeug
      */
     private void registriereKundenAnzeigenAktion()
     {
-        _kundenAuflisterWerkzeug
-                .registriereBeobachter(new SubWerkzeugObserver()
-                {
-                    @Override
-                    public void reagiereAufAenderung()
-                    {
-                        zeigeAusgewaehltenKunden();
-                        aktualisiereAusleihButton();
-                    }
-                });
+        _kundenAuflisterWerkzeug.registriereBeobachter(new SubWerkzeugObserver()
+        {
+            @Override
+            public void reagiereAufAenderung()
+            {
+                zeigeAusgewaehltenKunden();
+                aktualisiereAusleihButton();
+            }
+        });
     }
 
     /**
@@ -190,17 +190,16 @@ public class AusleihWerkzeug
      */
     private void registriereMedienAnzeigenAktion()
     {
-        _medienAuflisterWerkzeug
-                .registriereBeobachter(new SubWerkzeugObserver()
-                {
+        _medienAuflisterWerkzeug.registriereBeobachter(new SubWerkzeugObserver()
+        {
 
-                    @Override
-                    public void reagiereAufAenderung()
-                    {
-                        zeigeAusgewaehlteMedien();
-                        aktualisiereAusleihButton();
-                    }
-                });
+            @Override
+            public void reagiereAufAenderung()
+            {
+                zeigeAusgewaehlteMedien();
+                aktualisiereAusleihButton();
+            }
+        });
     }
 
     /**
@@ -216,15 +215,17 @@ public class AusleihWerkzeug
         // TODO für Aufgabenblatt 6 (nicht löschen): So ändern, dass vorgemerkte
         // Medien nur vom ersten Vormerker ausgeliehen werden können, gemäß
         // Anforderung d).
-        
+
         // BEARBEITET Es wird nun auch geprüft, ob die Bedingungen durch das Vormerken eingehalten wurden,
         // damit ein Medium ausgeliehen werden kann.
         boolean ausleiheMoeglichVormerkkarte = true;
-        for (Medium medium: medien)
+        for (Medium medium : medien)
         {
-            ausleiheMoeglichVormerkkarte = medium.getVormerkkarte().pruefeObAusleihenMoeglich(kunde) && ausleiheMoeglichVormerkkarte;
+            ausleiheMoeglichVormerkkarte = medium.getVormerkkarte()
+                .pruefeObAusleihenMoeglich(kunde)
+                    && ausleiheMoeglichVormerkkarte;
         }
-        
+
         boolean ausleiheMoeglich = (kunde != null) && !medien.isEmpty()
                 && _verleihService.sindAlleNichtVerliehen(medien);
 
@@ -237,8 +238,7 @@ public class AusleihWerkzeug
      */
     private void leiheAusgewaehlteMedienAus()
     {
-        List<Medium> selectedMedien = _medienAuflisterWerkzeug
-                .getSelectedMedien();
+        List<Medium> selectedMedien = _medienAuflisterWerkzeug.getSelectedMedien();
         Kunde selectedKunde = _kundenAuflisterWerkzeug.getSelectedKunde();
         try
         {
@@ -257,8 +257,7 @@ public class AusleihWerkzeug
      */
     private void zeigeAusgewaehlteMedien()
     {
-        List<Medium> selectedMedien = _medienAuflisterWerkzeug
-                .getSelectedMedien();
+        List<Medium> selectedMedien = _medienAuflisterWerkzeug.getSelectedMedien();
         _medienDetailAnzeigerWerkzeug.setMedien(selectedMedien);
     }
 
@@ -282,8 +281,9 @@ public class AusleihWerkzeug
      */
     private void aktualisiereAusleihButton()
     {
-        boolean istAusleihenMoeglich = istAusleihenMoeglich();
-        _ausleiheUI.getAusleihButton().setEnabled(istAusleihenMoeglich);
+        //boolean istAusleihenMoeglich = istAusleihenMoeglich();
+        _ausleiheUI.getAusleihButton()
+            .setEnabled(istAusleihenMoeglich());
     }
 
     /**

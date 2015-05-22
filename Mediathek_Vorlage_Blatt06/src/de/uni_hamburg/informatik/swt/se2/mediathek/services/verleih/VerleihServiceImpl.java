@@ -114,10 +114,11 @@ public class VerleihServiceImpl extends AbstractObservableService implements
 
         for (Medium medium : medien)
         {
-            
+
             // BEARBEITET Die Vormerkkarte wird geupdated beim Zurücknehmen.
-            medium.getVormerkkarte().wurdeZurueckgegeben();
-            
+            medium.getVormerkkarte()
+                .wurdeZurueckgegeben();
+
             Verleihkarte verleihkarte = _verleihkarten.get(medium);
             _verleihkarten.remove(medium);
             _protokollierer.protokolliere(
@@ -184,6 +185,19 @@ public class VerleihServiceImpl extends AbstractObservableService implements
         return result;
     }
 
+    //BEARBEITET Methode hinzugefügt
+
+    @Override
+    public void merkeVor(List<Medium> selectedMedien, Kunde selectedKunde)
+    {
+
+        for (Medium medium : selectedMedien)
+        {
+            medium.fuegeVormerkerHinzu(selectedKunde);
+        }
+        informiereUeberAenderung();
+    }
+
     @Override
     public void verleiheAn(Kunde kunde, List<Medium> medien, Datum ausleihDatum)
             throws ProtokollierException
@@ -197,9 +211,10 @@ public class VerleihServiceImpl extends AbstractObservableService implements
         {
             Verleihkarte verleihkarte = new Verleihkarte(kunde, medium,
                     ausleihDatum);
-            
+
             // BEARBEITET Die Vormerkkarte wird geupdated beim Ausleihen.
-            medium.getVormerkkarte().leiheAus(kunde);
+            medium.getVormerkkarte()
+                .leiheAus(kunde);
 
             _verleihkarten.put(medium, verleihkarte);
             _protokollierer.protokolliere(
@@ -247,7 +262,8 @@ public class VerleihServiceImpl extends AbstractObservableService implements
         List<Medium> result = new ArrayList<Medium>();
         for (Verleihkarte verleihkarte : _verleihkarten.values())
         {
-            if (verleihkarte.getEntleiher().equals(kunde))
+            if (verleihkarte.getEntleiher()
+                .equals(kunde))
             {
                 result.add(verleihkarte.getMedium());
             }
@@ -277,7 +293,8 @@ public class VerleihServiceImpl extends AbstractObservableService implements
         List<Verleihkarte> result = new ArrayList<Verleihkarte>();
         for (Verleihkarte verleihkarte : _verleihkarten.values())
         {
-            if (verleihkarte.getEntleiher().equals(kunde))
+            if (verleihkarte.getEntleiher()
+                .equals(kunde))
             {
                 result.add(verleihkarte);
             }

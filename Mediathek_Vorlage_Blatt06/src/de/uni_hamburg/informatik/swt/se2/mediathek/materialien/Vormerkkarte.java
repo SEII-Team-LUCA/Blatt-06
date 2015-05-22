@@ -68,7 +68,7 @@ public class Vormerkkarte
      */
     public boolean pruefeObAusleihenMoeglich(Kunde ausleiher)
     {
-        assert ausleiher != null : "Vorbedingung verletzt: null";
+        //assert ausleiher != null : "Vorbedingung verletzt: null";
         return (_ausleiher == null && (holeNaechstenAusleiher() == ausleiher || holeNaechstenAusleiher() == null));
     }
 
@@ -101,7 +101,7 @@ public class Vormerkkarte
 
     public boolean pruefeObVormerkenMoeglich(Kunde vormerker)
     {
-        assert vormerker != null : "Vorbedingung verletzt: null";
+        //assert vormerker != null : "Vorbedingung verletzt: null";
         return (!_vormerker.contains(vormerker) && _vormerker.size() < 3 && vormerker != _ausleiher);
     }
 

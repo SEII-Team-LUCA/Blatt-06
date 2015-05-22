@@ -248,12 +248,8 @@ public class VormerkWerkzeug
         // BEARBEITET Kunden werden nun hinzugefügt
         if (istVormerkenMoeglich())
         {
-            for (Medium medium : selectedMedien)
-            {
-                medium.fuegeVormerkerHinzu(selectedKunde);
-            }
+            _verleihService.merkeVor(selectedMedien, selectedKunde);
         }
-
     }
 
     /**
@@ -285,9 +281,9 @@ public class VormerkWerkzeug
      */
     private void aktualisiereVormerkButton()
     {
-        boolean istVormerkenMoeglich = istVormerkenMoeglich();
+        //boolean istVormerkenMoeglich = istVormerkenMoeglich();
         _vormerkUI.getVormerkenButton()
-            .setEnabled(istVormerkenMoeglich);
+            .setEnabled(istVormerkenMoeglich());
     }
 
     /**

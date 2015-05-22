@@ -99,6 +99,7 @@ public class VormerkMedienauflisterWerkzeug extends ObservableSubWerkzeug
         }
         _ui.getMedienAuflisterTableModel()
             .setMedien(medienFormatierer);
+        
     }
 
     /**
