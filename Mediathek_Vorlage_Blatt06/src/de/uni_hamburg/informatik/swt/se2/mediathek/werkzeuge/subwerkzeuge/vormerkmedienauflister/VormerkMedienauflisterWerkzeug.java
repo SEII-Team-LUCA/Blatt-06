@@ -88,8 +88,11 @@ public class VormerkMedienauflisterWerkzeug extends ObservableSubWerkzeug
             // die Namen des Entleihers und der möglichen 3 Vormerker.
             
             // BEARBEITET 05. Daten wurden aus der Vormerkkarte importiert
-            
-            Kunde entleiher = medium.getVormerkkarte().gibAusleiher();
+            Kunde entleiher = null;
+            if(_verleihService.istVerliehen(medium))
+            {
+                entleiher = _verleihService.getEntleiherFuer(medium);
+            }
             Kunde vormerker1 = medium.getVormerkkarte().gibVormerker(0);
             Kunde vormerker2 = medium.getVormerkkarte().gibVormerker(1);
             Kunde vormerker3 = medium.getVormerkkarte().gibVormerker(2);
